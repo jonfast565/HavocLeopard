@@ -10,8 +10,8 @@
 namespace hl {
     class title_bar {
     public:
-        void print() {
-            std::cout << "--- HL CPU Torture ---" << std::endl;
+        void print(std::string& title_string) {
+            std::cout << "--- HL " << title_string << " ---" << std::endl;
             std::cout << "Author: Jon Fast" << std::endl;
             std::cout << "Version: 1.0" << std::endl;
             std::cout << "--------------------" << std::endl;

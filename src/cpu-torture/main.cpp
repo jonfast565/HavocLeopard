@@ -14,7 +14,8 @@ int main() {
     hl::exit_mutex exit_mutex_nonref;
     hl::title_bar bar;
 
-    bar.print();
+    std::string title_string("CPU Torture");
+    bar.print(title_string);
 
     auto t1 = std::thread(run_cpu_torture, std::ref(exit_mutex_nonref));
 

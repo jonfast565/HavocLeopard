@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.hpp"
 
 void run_ram_torture(hl::exit_mutex& exit_mutex_ref) {
     while (true) {

@@ -17,12 +17,12 @@ include_directories(include)
 
 add_executable(hl-cpu-torture
         src/cpu-torture/main.cpp
-        src/cpu-torture/main.h
-        include/exit_mutex.h
-        include/title_bar.h)
+        src/cpu-torture/main.hpp
+        include/exit_mutex.hpp
+        include/title_bar.hpp)
 
 add_executable(hl-ram-torture
         src/ram-torture/main.cpp
-        src/ram-torture/main.h
-        include/exit_mutex.h
-        include/title_bar.h)
+        src/ram-torture/main.hpp
+        include/exit_mutex.hpp
+        include/title_bar.hpp)

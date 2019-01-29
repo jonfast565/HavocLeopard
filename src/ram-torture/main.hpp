@@ -8,7 +8,7 @@
 #include <iostream>
 #include <thread>
 #include <cstdlib>
-#include "title_bar.h"
-#include "exit_mutex.h"
+#include "title_bar.hpp"
+#include "exit_mutex.hpp"
 
 #endif //HL_RAM_TORTURE_MAIN_H

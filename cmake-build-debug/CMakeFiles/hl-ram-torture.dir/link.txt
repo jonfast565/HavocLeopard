@@ -1,3 +1,0 @@
-C:\Users\jfast\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\183.5153.40\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\hl-ram-torture.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\hl-ram-torture.dir/objects.a @CMakeFiles\hl-ram-torture.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g   -static -Wl,--whole-archive CMakeFiles\hl-ram-torture.dir/objects.a -Wl,--no-whole-archive  -o hl-ram-torture.exe -Wl,--out-implib,libhl-ram-torture.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hl-ram-torture.dir\linklibs.rsp

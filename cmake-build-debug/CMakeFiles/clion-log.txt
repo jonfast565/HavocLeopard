@@ -1,4 +1,0 @@
-C:\Users\jfast\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\183.5153.40\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\jfast\Desktop\Repos\HavocLeopard
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/jfast/Desktop/Repos/HavocLeopard/cmake-build-debug

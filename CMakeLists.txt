@@ -1,13 +1,28 @@
 cmake_minimum_required(VERSION 3.13)
-project(chaos_monkey)
+project(havoc_leopard)
 
 set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
 set(CMAKE_SHARED_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
-
-add_library(gccStaticLibs SHARED main.cpp)
 set(CMAKE_EXE_LINKER_FLAGS " -static")
+
+add_library(gccStaticLibs SHARED
+        src/cpu-torture/main.cpp
+        src/ram-torture/main.cpp)
+
 target_link_libraries(gccStaticLibs -static-libgcc -static-libstdc++)
 
-add_executable(chaos_monkey main.cpp exit_mutex.h main.h title_bar.h)
+include_directories(include)
+
+add_executable(hl-cpu-torture
+        src/cpu-torture/main.cpp
+        src/cpu-torture/main.h
+        include/exit_mutex.h
+        include/title_bar.h)
+
+add_executable(hl-ram-torture
+        src/ram-torture/main.cpp
+        src/ram-torture/main.h
+        include/exit_mutex.h
+        include/title_bar.h)

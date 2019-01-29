@@ -2,14 +2,12 @@
 // Created by jfast on 1/17/2019.
 //
 
-#ifndef CHAOS_MONKEY_EXIT_MUTEX_H
-#define CHAOS_MONKEY_EXIT_MUTEX_H
+#ifndef HL_EXIT_MUTEX_H
+#define HL_EXIT_MUTEX_H
 
 #include <mutex>
 
-namespace cmonkey {
-namespace cpu_destroyer {
-
+namespace hl {
     class exit_mutex {
     private:
         int should_exit = 0;
@@ -32,6 +30,5 @@ namespace cpu_destroyer {
         }
     };
 }
-}
 
-#endif //CHAOS_MONKEY_EXIT_MUTEX_H
+#endif //HL_EXIT_MUTEX_H

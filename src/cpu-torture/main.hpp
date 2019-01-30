@@ -8,6 +8,7 @@
 #include <iostream>
 #include <thread>
 #include <cstdlib>
+#include <vector>
 #include "title_bar.hpp"
 #include "exit_mutex.hpp"
 

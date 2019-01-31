@@ -1,5 +1,20 @@
 #include "main.hpp"
 
+int main() {
+    hl::exit_mutex exiter;
+    hl::title_bar bar;
+
+    std::string title_string("RAM Torture");
+    bar.print(title_string);
+
+    hl::cpu_utils::run_job(exiter, [&]() {
+        run_ram_torture(exiter);
+    });
+
+    std::cout << "Done!" << std::endl;
+    return 0;
+}
+
 void run_ram_torture(hl::exit_mutex& exit_mutex_ref) {
     while (true) {
         malloc(sizeof(int8_t));
@@ -7,23 +22,4 @@ void run_ram_torture(hl::exit_mutex& exit_mutex_ref) {
         if (should_exit == 1)
             break;
     }
-}
-
-int main() {
-    hl::exit_mutex exit_mutex_nonref;
-    hl::title_bar bar;
-
-    std::string title_string("RAM Torture");
-    bar.print(title_string);
-
-    auto t1 = std::thread(run_ram_torture, std::ref(exit_mutex_nonref));
-
-    std::cout << "Press any key to exit..." << std::endl;
-    getchar();
-
-    exit_mutex_nonref.set_should_exit();
-    t1.join();
-
-    std::cout << "Done!" << std::endl;
-    return 0;
 }

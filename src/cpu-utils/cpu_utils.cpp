@@ -33,7 +33,7 @@ void hl::cpu_utils::multi_threaded_loop(hl::exit_mutex &exiter, std::function<vo
 
 bool hl::cpu_utils::loop_should_be_multi_threaded() {
     unsigned hardware_concurrency = std::thread::hardware_concurrency();
-    return hardware_concurrency > 1;
+    return hardware_concurrency > 0;
 }
 
 void hl::cpu_utils::run_job(hl::exit_mutex &exiter, const std::function<void()> &job_function) {

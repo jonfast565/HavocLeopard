@@ -1,13 +1,13 @@
 #include "main.hpp"
 
 int main() {
-    hl::exit_mutex exiter;
     hl::title_bar bar;
+    hl::exit_mutex exiter;
 
     std::string title_string("RAM Torture");
     bar.print(title_string);
 
-    hl::cpu_utils::run_job(exiter, [&]() {
+    hl::cpu_utils::single_threaded_loop(exiter, [&]() {
         run_ram_torture(exiter);
     });
 

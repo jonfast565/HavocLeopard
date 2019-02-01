@@ -18,12 +18,12 @@ include_directories(include)
 
 add_executable(hl-cpu-torture
         src/cpu-torture/main.cpp)
-target_link_libraries(hl-cpu-torture ${PROJECT_LIBRARIES} lpthread)
+target_link_libraries(hl-cpu-torture ${PROJECT_LIBRARIES} pthread)
 
 add_executable(hl-ram-torture
         src/ram-torture/main.cpp)
-target_link_libraries(hl-ram-torture ${PROJECT_LIBRARIES} lpthread)
+target_link_libraries(hl-ram-torture ${PROJECT_LIBRARIES} pthread)
 
 add_executable(hl-cpu-random-spike
         src/cpu-random-spike/main.cpp)
-target_link_libraries(hl-cpu-random-spike ${PROJECT_LIBRARIES} lpthread)
+target_link_libraries(hl-cpu-random-spike ${PROJECT_LIBRARIES} pthread)

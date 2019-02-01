@@ -1,15 +1,16 @@
 # https://stackoverflow.com/questions/41916656/how-to-use-travis-ci-to-build-modern-c-using-modern-cmake
-dist: trusty
+dist: xenial
 sudo: required
 language: cpp
+addons:
+  apt:
+    packages:
+      - cmake
 compiler:
   - gcc
 before_script:
-  - mkdir cmake
-  - cd cmake
-  - wget https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.sh
-  - sudo chmod 777 ./cmake-3.13.3-Linux-x86_64.sh
-  - ./cmake-3.13.3-Linux-x86_64.sh
+  - whereis cmake
+  - cmake --version
 script:
-  - ./cmake/cmake CMakeLists.txt -B . -G "Unix Makefiles"
+  - CMakeLists.txt -B . -G "Unix Makefiles"
   - make

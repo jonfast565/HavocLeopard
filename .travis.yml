@@ -11,5 +11,5 @@ before_script:
   - sudo chmod 777 ./cmake-3.13.3-Linux-x86_64.sh
   - ./cmake-3.13.3-Linux-x86_64.sh
 script:
-  - cmake CMakeLists.txt -B . -G "Unix Makefiles"
+  - ./cmake/cmake CMakeLists.txt -B . -G "Unix Makefiles"
   - make

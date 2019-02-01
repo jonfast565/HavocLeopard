@@ -6,9 +6,10 @@ addons:
   apt:
     packages:
       - cmake
-      - cmake-data
 compiler:
   - gcc
+before_script:
+  - cmake --version
 script:
   - cmake CMakeLists.txt -B . -G "Unix Makefiles"
   - make

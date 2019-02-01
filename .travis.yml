@@ -5,12 +5,14 @@ language: cpp
 addons:
   apt:
     packages:
+      - gcc
+      - g++
       - cmake
 compiler:
   - gcc
 before_script:
   - whereis cmake
-  - /usr/bin/cmake --version
+  - /usr/local/cmake --version
 script:
-  - /usr/bin/cmake CMakeLists.txt -B . -G "Unix Makefiles"
+  - /usr/local/cmake CMakeLists.txt -B . -G "Unix Makefiles"
   - make

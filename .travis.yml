@@ -5,8 +5,5 @@ language: cpp
 compiler:
   - gcc
 script:
-  - mkdir build
-  - cd ../
-  - cmake CMakeLists.txt -B ./build -G "Unix Makefiles"
-  - cd build
+  - cmake CMakeLists.txt -B . -G "Unix Makefiles"
   - make

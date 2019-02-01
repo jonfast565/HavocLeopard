@@ -8,11 +8,11 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -static-libgcc -st
 add_library(cpu_utils SHARED
         src/cpu-utils/cpu_utils.cpp)
 
-add_library(exit_utils SHARED
-        src/exit-utils/exit_mutex.cpp)
+add_library(console_utils SHARED
+        src/console-utils/exit_mutex.cpp)
 
-set(PROJECT_LIBRARIES cpu_utils exit_utils)
-target_link_libraries(cpu_utils exit_utils)
+set(PROJECT_LIBRARIES cpu_utils console_utils)
+target_link_libraries(cpu_utils console_utils)
 
 include_directories(include)
 

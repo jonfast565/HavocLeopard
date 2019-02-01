@@ -9,7 +9,7 @@
 #include <vector>
 #include <iostream>
 
-#include "../exit-utils/exit_mutex.hpp"
+#include "../console-utils/exit_mutex.hpp"
 
 namespace hl {
     namespace cpu_utils {

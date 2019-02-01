@@ -8,6 +8,7 @@ before_script:
   - mkdir cmake
   - cd cmake
   - wget https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3-Linux-x86_64.sh
+  - sudo chmod 777 ./cmake-3.13.3-Linux-x86_64.sh
   - ./cmake-3.13.3-Linux-x86_64.sh
 script:
   - cmake CMakeLists.txt -B . -G "Unix Makefiles"

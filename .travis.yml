@@ -10,7 +10,7 @@ compiler:
   - gcc
 before_script:
   - whereis cmake
-  - cmake --version
+  - /usr/bin/cmake --version
 script:
-  - cmake CMakeLists.txt -B . -G "Unix Makefiles"
+  - /usr/bin/cmake CMakeLists.txt -B . -G "Unix Makefiles"
   - make

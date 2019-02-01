@@ -7,5 +7,5 @@ compiler:
 script:
   - mkdir build
   - cd build
-  - ccmake ../
+  - cmake ../CMAKELists.txt -B . -G "Unix Makefiles"
   - make

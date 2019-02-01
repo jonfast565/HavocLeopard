@@ -6,6 +6,6 @@ compiler:
   - gcc
 script:
   - mkdir build
+  - cmake CMakeLists.txt -B ./build -G "Unix Makefiles"
   - cd build
-  - cmake ../CMAKELists.txt -B . -G "Unix Makefiles"
   - make

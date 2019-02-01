@@ -5,14 +5,14 @@ language: cpp
 addons:
   apt:
     packages:
-      - gcc
-      - g++
       - cmake
 compiler:
   - gcc
 before_script:
-  - whereis cmake
-  - /usr/local/cmake --version
+  - mkdir cmake
+  - cd cmake
+  - wget https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3.tar.gz
+  - tar -xvf cmake-3.13.3.tar.gz
 script:
-  - /usr/local/cmake CMakeLists.txt -B . -G "Unix Makefiles"
+  - CMakeLists.txt -B . -G "Unix Makefiles"
   - make

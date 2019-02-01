@@ -12,5 +12,5 @@ before_script:
   - whereis cmake
   - cmake --version
 script:
-  - CMakeLists.txt -B . -G "Unix Makefiles"
+  - cmake CMakeLists.txt -B . -G "Unix Makefiles"
   - make

@@ -9,6 +9,7 @@ addons:
 compiler:
   - gcc
 before_script:
+  - whereis cmake
   - cmake --version
 script:
   - cmake CMakeLists.txt -B . -G "Unix Makefiles"

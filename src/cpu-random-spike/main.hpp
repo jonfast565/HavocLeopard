@@ -7,9 +7,9 @@
 
 #include <iostream>
 #include <random>
-#include "../title-utils/title_bar.hpp"
+#include "../console-utils/title_bar.hpp"
 #include "../cpu-utils/cpu_utils.hpp"
 
-void run_cpu_random_spike(hl::exit_mutex &exit_mutex_ref);
+void run_cpu_random_spike(hl::console_utils::exit_mutex &exit_mutex_ref);
 
 #endif //HL_CPU_RANDOM_SPIKE_MAIN_H

@@ -9,7 +9,7 @@ add_library(cpu_utils SHARED
         src/cpu-utils/cpu_utils.cpp)
 
 add_library(console_utils SHARED
-        src/console-utils/exit_mutex.cpp)
+        src/console-utils/exit_mutex.cpp src/console-utils/title_bar.cpp)
 
 set(PROJECT_LIBRARIES cpu_utils console_utils)
 target_link_libraries(cpu_utils console_utils)

@@ -1,8 +1,8 @@
 #include "main.hpp"
 
 int main() {
-    hl::title_bar bar;
-    hl::exit_mutex exiter;
+    hl::console_utils::title_bar bar;
+    hl::console_utils::exit_mutex exiter;
 
     std::string title_string("RAM Torture");
     bar.print(title_string);
@@ -15,7 +15,7 @@ int main() {
     return 0;
 }
 
-void run_ram_torture(hl::exit_mutex& exit_mutex_ref) {
+void run_ram_torture(hl::console_utils::exit_mutex& exit_mutex_ref) {
     while (true) {
         malloc(sizeof(int8_t));
         auto should_exit = exit_mutex_ref.get_should_exit();

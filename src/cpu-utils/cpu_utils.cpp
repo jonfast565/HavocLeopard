@@ -1,6 +1,6 @@
 #include "cpu_utils.hpp"
 
-void hl::cpu_utils::single_threaded_loop(hl::exit_mutex &exiter, std::function<void()> runnable) {
+void hl::cpu_utils::single_threaded_loop(hl::console_utils::exit_mutex &exiter, std::function<void()> runnable) {
     auto t1 = std::thread(runnable);
 
     std::cout << "Press any key to exit..." << std::endl;
@@ -10,7 +10,7 @@ void hl::cpu_utils::single_threaded_loop(hl::exit_mutex &exiter, std::function<v
     t1.join();
 }
 
-void hl::cpu_utils::multi_threaded_loop(hl::exit_mutex &exiter, std::function<void()> runnable) {
+void hl::cpu_utils::multi_threaded_loop(hl::console_utils::exit_mutex &exiter, std::function<void()> runnable) {
     std::vector<std::thread> active_threads;
 
     unsigned hardware_concurrency = std::thread::hardware_concurrency();
@@ -36,7 +36,7 @@ bool hl::cpu_utils::loop_should_be_multi_threaded() {
     return hardware_concurrency > 1;
 }
 
-void hl::cpu_utils::run_job(hl::exit_mutex &exiter, const std::function<void()> &job_function) {
+void hl::cpu_utils::run_job(hl::console_utils::exit_mutex &exiter, const std::function<void()> &job_function) {
     if (hl::cpu_utils::loop_should_be_multi_threaded()) {
         hl::cpu_utils::multi_threaded_loop(exiter, job_function);
     } else {

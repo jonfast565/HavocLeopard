@@ -1,8 +1,8 @@
 #include "main.hpp"
 
 int main() {
-    hl::exit_mutex exiter;
-    hl::title_bar bar;
+    hl::console_utils::exit_mutex exiter;
+    hl::console_utils::title_bar bar;
 
     std::string title_string("Random CPU Spikes");
     bar.print(title_string);
@@ -15,7 +15,7 @@ int main() {
     return 0;
 }
 
-void run_cpu_random_spike(hl::exit_mutex &exit_mutex_ref) {
+void run_cpu_random_spike(hl::console_utils::exit_mutex &exit_mutex_ref) {
     auto seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::default_random_engine generator(seed);
 

@@ -13,13 +13,13 @@
 
 namespace hl {
     namespace cpu_utils {
-        void single_threaded_loop(hl::exit_mutex &exiter, std::function<void()> runnable);
+        void single_threaded_loop(hl::console_utils::exit_mutex &exiter, std::function<void()> runnable);
 
-        void multi_threaded_loop(hl::exit_mutex &exiter, std::function<void()> runnable);
+        void multi_threaded_loop(hl::console_utils::exit_mutex &exiter, std::function<void()> runnable);
 
         bool loop_should_be_multi_threaded();
 
-        void run_job(hl::exit_mutex &exiter, const std::function<void()> &job_function);
+        void run_job(hl::console_utils::exit_mutex &exiter, const std::function<void()> &job_function);
     }
 }
 
